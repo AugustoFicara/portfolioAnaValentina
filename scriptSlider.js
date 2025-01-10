@@ -1,4 +1,4 @@
-function getQueryParams(){
+function getQueryParams() {
     const params = {};
     const queryString = window.location.search.substring(1);
     const queries = queryString.split("&");
@@ -28,16 +28,23 @@ switch (title) {
         for (let i = 1; i <= imagesToLoad; i++) {
             const imgElement = document.createElement('div');
             imgElement.classList.add('image');
-            imgElement.innerHTML = `<img src="img/slider/${folderName}/${folderName}-${i}.jpg" alt="${title}">`;
+            imgElement.innerHTML = `<img src="img/slider/${folderName}/${folderName}-${i}.jpg" alt="${title} ${i}">`;
             imageContainer.appendChild(imgElement);
         }
         break;
     case "Fotoproductos":
-        for (let i = 1; i <= imagesToLoad; i++) {
-            const imgElement = document.createElement('div');
-            imgElement.classList.add('image');
-            imgElement.innerHTML = `<img src="img/slider/${folderName}/${folderName}-${i}.jpg" alt="${title}">`;
-            imageContainer.appendChild(imgElement);
+        const totalImages = 33;
+        const usedIndexes = new Set();
+        while (usedIndexes.size < imagesToLoad) {
+            const randomIndex = Math.floor(Math.random() * totalImages) + 1;
+            if (!usedIndexes.has(randomIndex)) {
+                usedIndexes.add(randomIndex);
+
+                const imgElement = document.createElement('div');
+                imgElement.classList.add('image');
+                imgElement.innerHTML = `<img src="img/slider/fotoproductos/fotoproductos-${randomIndex}.jpg" alt="Fotoproductos ${randomIndex}">`;
+                imageContainer.appendChild(imgElement);
+            }
         }
         break;
 }
@@ -50,7 +57,7 @@ document.querySelectorAll('.image-container img').forEach(image => {
     }
 });
 
-document.querySelectorAll('.popup-image span').forEach(function(span) {
+document.querySelectorAll('.popup-image span').forEach(function (span) {
     span.onclick = () => {
         document.querySelector('.popup-image').style.display = 'none';
     };
