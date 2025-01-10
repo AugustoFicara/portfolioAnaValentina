@@ -87,6 +87,7 @@
     border-radius: 5px;
     width: 750px;
     object-fit: cover;
+    max-height: 95%;
 }
 
 @media (max-width: 768px){

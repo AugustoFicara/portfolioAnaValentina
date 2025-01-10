@@ -13,7 +13,34 @@ const params = getQueryParams();
 const title = params.title || "Título por defecto";
 const description = params.description || "Descripción por defecto";
 
-document.querySelector('.title').textContent = `${title} - ${description}`;
+const titleElement = document.querySelector('.title');
+titleElement.textContent = `${title} - ${description}`;
+
+const imageContainer = document.querySelector('.image-container');
+const folderName = title.toLowerCase();
+
+imageContainer.innerHTML = "";
+
+let imagesToLoad = 10;
+
+switch (title) {
+    case "Bares":
+        for (let i = 1; i <= imagesToLoad; i++) {
+            const imgElement = document.createElement('div');
+            imgElement.classList.add('image');
+            imgElement.innerHTML = `<img src="img/slider/${folderName}/${folderName}-${i}.jpg" alt="${title}">`;
+            imageContainer.appendChild(imgElement);
+        }
+        break;
+    case "Fotoproductos":
+        for (let i = 1; i <= imagesToLoad; i++) {
+            const imgElement = document.createElement('div');
+            imgElement.classList.add('image');
+            imgElement.innerHTML = `<img src="img/slider/${folderName}/${folderName}-${i}.jpg" alt="${title}">`;
+            imageContainer.appendChild(imgElement);
+        }
+        break;
+}
 
 //SLIDER
 document.querySelectorAll('.image-container img').forEach(image => {
