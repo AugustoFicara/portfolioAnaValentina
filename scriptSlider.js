@@ -21,10 +21,11 @@ const folderName = title.toLowerCase();
 
 imageContainer.innerHTML = "";
 
-let imagesToLoad = 10;
+let imagesToLoad;
 
 switch (title) {
     case "Bares":
+        imagesToLoad = 10;
         for (let i = 1; i <= imagesToLoad; i++) {
             const imgElement = document.createElement('div');
             imgElement.classList.add('image');
@@ -33,18 +34,21 @@ switch (title) {
         }
         break;
     case "Fotoproductos":
-        const totalImages = 33;
-        const usedIndexes = new Set();
-        while (usedIndexes.size < imagesToLoad) {
-            const randomIndex = Math.floor(Math.random() * totalImages) + 1;
-            if (!usedIndexes.has(randomIndex)) {
-                usedIndexes.add(randomIndex);
-
-                const imgElement = document.createElement('div');
-                imgElement.classList.add('image');
-                imgElement.innerHTML = `<img src="img/slider/fotoproductos/fotoproductos-${randomIndex}.jpg" alt="Fotoproductos ${randomIndex}">`;
-                imageContainer.appendChild(imgElement);
-            }
+        imagesToLoad = 10;
+        for (let i = 1; i <= imagesToLoad; i++) {
+            const imgElement = document.createElement('div');
+            imgElement.classList.add('image');
+            imgElement.innerHTML = `<img src="img/slider/${folderName}/${folderName}-${i}.webp" alt="${title} ${i}">`;
+            imageContainer.appendChild(imgElement);
+        }
+        break;
+    case "Sesiones":
+        imagesToLoad = 10;
+        for (let i = 1; i <= imagesToLoad; i++) {
+            const imgElement = document.createElement('div');
+            imgElement.classList.add('image');
+            imgElement.innerHTML = `<img src="img/slider/${folderName}/${folderName}-${i}.webp" alt="${title} ${i}">`;
+            imageContainer.appendChild(imgElement);
         }
         break;
 }
