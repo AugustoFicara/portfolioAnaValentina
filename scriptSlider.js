@@ -34,7 +34,7 @@ switch (title) {
         }
         break;
     case "Fotoproductos":
-        imagesToLoad = 10;
+        imagesToLoad = 15;
         for (let i = 1; i <= imagesToLoad; i++) {
             const imgElement = document.createElement('div');
             imgElement.classList.add('image');
