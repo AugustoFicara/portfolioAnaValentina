@@ -28,7 +28,7 @@ switch (title) {
         for (let i = 1; i <= imagesToLoad; i++) {
             const imgElement = document.createElement('div');
             imgElement.classList.add('image');
-            imgElement.innerHTML = `<img src="img/slider/${folderName}/${folderName}-${i}.jpg" alt="${title} ${i}">`;
+            imgElement.innerHTML = `<img src="img/slider/${folderName}/${folderName}-${i}.webp" alt="${title} ${i}">`;
             imageContainer.appendChild(imgElement);
         }
         break;

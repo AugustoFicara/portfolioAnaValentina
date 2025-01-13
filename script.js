@@ -70,9 +70,9 @@ function seleccionar() {
     menuVisible = false;
 }
 
-window.onscroll = function () {
+/*window.onscroll = function () {
     efectoHabilidades();
-}
+}*/
 
 function efectoHabilidades() {
     var skills = document.getElementById("skills");
