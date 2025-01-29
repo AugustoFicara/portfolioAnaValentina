@@ -1398,6 +1398,10 @@ footer .arriba.hover-red {
         display: block;
     }
 
+    .contacto .fila #form{
+        width: 100%;
+    }
+
     .contacto .fila .col {
         width: 100%;
     }
